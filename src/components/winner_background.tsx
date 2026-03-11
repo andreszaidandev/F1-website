@@ -1,5 +1,5 @@
 import { useMemo, useRef } from "react";
-import predictionsData from "../assets/predictions.json";
+import predictionsData, { getPredictionsSortedByWinProb } from "../data/predictions";
 import Podium from "./podium";
 import "./winner_background.css";
 
@@ -15,7 +15,7 @@ const DRIVER_VIDEO_ALIASES: Record<string, string> = {
 
 
 const getWinnerCode = () => {
-  const winner = predictionsData.predictions[0];
+  const winner = getPredictionsSortedByWinProb()[0];
 
   if (!winner) {
     return null;

@@ -1,4 +1,4 @@
-import predictionsData from "../assets/predictions.json";
+import predictionsData, { getPredictionsSortedByWinProb } from "../data/predictions";
 import "./prediction_table.css";
 
 const DRIVER_NAMES: Record<string, string> = {
@@ -27,11 +27,11 @@ const DRIVER_NAMES: Record<string, string> = {
 };
 
 const formatPercent = (value: number) => `${(value * 100).toFixed(1)}%`;
+const formatQualPos = (value: number | null) =>
+  value == null || Number.isNaN(value) ? "-" : `${Math.round(value)}`;
 
 export default function PredictionTable() {
-  const rows = [...predictionsData.predictions].sort(
-    (a, b) => a.predicted_position - b.predicted_position,
-  );
+  const rows = getPredictionsSortedByWinProb();
 
   if (rows.length === 0) {
     return <p>No prediction data available.</p>;
@@ -56,14 +56,14 @@ export default function PredictionTable() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((row) => (
-              <tr key={row.predicted_position}>
-                <td>{row.predicted_position}</td>
+            {rows.map((row, index) => (
+              <tr key={`${row.driver_number}-${index + 1}`}>
+                <td>{index + 1}</td>
                 <td className="prediction-table__driver">
                   {DRIVER_NAMES[row.driver] ?? row.driver}
                 </td>
                 <td className="prediction-table__tag">{row.driver}</td>
-                <td>{Math.round(row.qual_position)}</td>
+                <td>{formatQualPos(row.qual_position)}</td>
                 <td className="prediction-table__num">
                   {formatPercent(row.winner_prob)}
                 </td>
