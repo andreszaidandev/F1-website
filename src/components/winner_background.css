@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Formula1 Regular";
+  src: url("../assets/Formula1-Regular_web_0.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+.winner-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.winner-hero__video,
+.winner-hero__fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.winner-hero__video {
+  object-fit: cover;
+}
+
+.winner-hero__fallback {
+  background: radial-gradient(circle at 20% 20%, #323247 0%, #15151e 60%);
+}
+
+/* .winner-hero__shade {
+position: absolute;
+inset: 0;
+background:
+linear-gradient(to top, rgba(21, 21, 30, 0.9) 0%, rgba(21, 21, 30, 0.25) 55%, rgba(0, 0, 0, 0.1) 100%),
+linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 55%);
+} */
+
+.winner-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto 3.5rem;
+}
+
+.winner-hero__eyebrow {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  margin: 0;
+  color: #cfd2ff;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-family: "Formula1 Regular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

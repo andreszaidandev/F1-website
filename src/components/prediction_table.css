@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Formula1 Regular";
+  src: url("../assets/Formula1-Regular_web_0.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+.prediction-table {
+  width: 100%;
+  font-family: "Formula1 Regular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.prediction-table__title {
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.3rem, 2.6vw, 1.85rem);
+  color: #f5f7ff;
+}
+
+.prediction-table__scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.prediction-table__grid {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  background: rgba(9, 10, 14, 0.55);
+}
+
+.prediction-table__grid thead th {
+  padding: 1rem 0.5rem 1.1rem;
+  border-bottom: 2px solid #333548;
+  color: #a9b4c8;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.prediction-table__grid tbody td {
+  padding: 1.3rem 0.5rem;
+  border-bottom: 1px solid rgba(58, 61, 80, 0.7);
+  color: #f4f6ff;
+  font-size: 0.8rem;
+}
+
+.prediction-table__grid tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.prediction-table__driver {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.prediction-table__tag {
+  color: #b8c0d8;
+  letter-spacing: 0.04em;
+}
+
+.prediction-table__num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.prediction-table__grid thead th:nth-child(5),
+.prediction-table__grid thead th:nth-child(6),
+.prediction-table__grid thead th:nth-child(7) {
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .prediction-table__title {
+    margin-bottom: 0.9rem;
+  }
+
+  .prediction-table__grid tbody td {
+    padding: 1rem 0.45rem;
+    font-size: 1rem;
+  }
+}

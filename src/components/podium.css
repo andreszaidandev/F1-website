@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "Formula1 Regular";
+  src: url("../assets/Formula1-Regular_web_0.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Formula1 Bold";
+  src: url("../assets/Formula1-Bold_web_0.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: end;
+}
+
+.podium__position {
+  background: rgba(13, 13, 22, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+.podium_driver_name {
+  margin: 0;
+  font-family: "Formula1 Bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.08;
+}
+
+.podium_predicted {
+  margin: 0;
+  color: #b8c0d8;
+  font-family: "Formula1 Regular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.podium_position {
+  margin: 0.15rem 0 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-family: "Formula1 Bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 0.95;
+}
+
+.podium__position--first .podium_driver_name {
+  font-size: clamp(1.25rem, 2.1vw, 1.6rem);
+}
+
+.podium__position--first .podium_predicted {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+.podium__position--first .podium_position {
+  font-size: clamp(3.8rem, 5.8vw, 5.3rem);
+}
+
+.podium__position--second .podium_driver_name {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+}
+
+.podium__position--second .podium_predicted {
+  font-size: clamp(0.76rem, 0.9vw, 0.9rem);
+}
+
+.podium__position--second .podium_position {
+  font-size: clamp(2.9rem, 4.9vw, 4.1rem);
+}
+
+.podium__position--third .podium_driver_name {
+  font-size: clamp(0.95rem, 1.45vw, 1.2rem);
+}
+
+.podium__position--third .podium_predicted {
+  font-size: clamp(0.7rem, 0.82vw, 0.82rem);
+}
+
+.podium__position--third .podium_position {
+  font-size: clamp(2.5rem, 4.2vw, 3.5rem);
+}
+
+.podium__position--first {
+  min-height: 165px;
+}
+
+.podium__position--second,
+.podium__position--third {
+  min-height: 132px;
+}
+
+.predictions-section {
+  background: #15151e;
+  min-height: 100vh;
+  padding: 4.5rem 0 5rem;
+}
+
+.predictions-section__content {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+
+
+@media (max-width: 760px) {
+  .winner-hero__content {
+    margin-bottom: 2rem;
+  }
+
+  .podium {
+    grid-template-columns: 1fr;
+  }
+
+  .podium__position--first {
+    order: 1;
+  }
+
+  .podium__position--second {
+    order: 2;
+  }
+
+  .podium__position--third {
+    order: 3;
+  }
+}
